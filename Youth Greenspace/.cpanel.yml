@@ -16,3 +16,5 @@ deployment:
   /bin/cp service.html $DEPLOYPATH
    /bin/cp contact.html $DEPLOYPATH
     /bin/cp about.html $DEPLOYPATH
+     /bin/cp LICENSE.txt $DEPLOYPATH
+      /bin/cp .cpanel.yml $DEPLOYPATH
