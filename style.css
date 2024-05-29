@@ -1,129 +1,100 @@
-/* customizable snowflake styling */
-.loader button {
-    width: 50%;
-    height: 100px;
-    position: fixed;
-    left: 50%;
-    top: 45%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    background: center no-repeat #fff;
-    z-index: 9999999999999999999999;
-    font-size: 50px;
-    outline: none;
-    box-sizing: border-box;
-    border: none;
-    border-radius: .3em;
-    text-transform: uppercase;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
-    border: 1px solid #a55d07;
-    color: rgb(120, 50, 5);
-    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    background-size: 100% 100%;
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Bodoni Moda', serif;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(bday.gif);
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.golden-btn:focus,
-.golden-btn:hover {
-    background-size: 150% 150%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    border: 1px solid rgba(165, 93, 7, .6);
-    color: rgba(120, 50, 5, .8);
+.container{
+    perspective: 1000px;
 }
-
-.golden-btn:active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+.card{
+    width: 280px;
+    height: 360px;
+    position: absolute;
+    top: 100px;
+    left: 230px;
+    transition: 2s;
+    transform-style: preserve-3d;
 }
-
-.loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
+.card:hover{
+    transform: rotateY(180deg);
+}
+.block{
+    position: absolute;
+    top:200px;
+    right: 600px;
+    perspective: 800px;
+}
+.outside,.inside{
     width: 100%;
     height: 100%;
-    z-index: 999;
-    background: url(img/back.png) center no-repeat #000;
-}
-
-.song {
-    display: none;
-}
-
-body {
-    background-color: #FFDAB9;
-}
-
-img {
-    width: 100%;
-}
-
-.balloon-border {
-    position: fixed;
-    top: 100%;
-    opacity: 0.5;
-    z-index: 99999999;
-}
-
-.area {
+    border-radius: 20px;
     text-align: center;
-    font-size: 70px;
-    color: #C4515C;
-    letter-spacing: -7px;
-    font-weight: 700;
-    text-transform: uppercase;
-    animation: spin 2s ease-out infinite;
-    text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+    padding: 1.5rem;
 }
-
-#nae {
-    text-transform: capitalize;
-}
-
-#confetti {
+.outside{
+    background-color: blanchedalmond;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    backface-visibility: hidden;
 }
-
-@keyframes spin {
-    0% {
-        transform: rotateZ(0);
-    }
-
-    25% {
-        transform: rotateZ(10deg);
-    }
-
-    50% {
-        transform: rotateZ(0deg);
-    }
-
-    75% {
-        transform: rotateZ(-10deg);
-    }
+.outside h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: salmon;
+    margin-bottom: 30px;
 }
-
-.type-wrap {
-    font-size: 25px;
-    color: #C4515C;
-
+.inside{
+    background-color: rgb(255, 244, 79);
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+    transform: rotateY(180deg);
 }
+.inside h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.frames{
+    width: 400px;
+    height: 150px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0.8rem;
 
-.cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
+    transform: rotateY(-230deg) rotateX(20deg);
     position: absolute;
-    padding-top: 250px;
+}
+.frames img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.frames p{
+   font-size: 20px;
+   font-weight: bold;
+   transform: rotateY(180deg);
+}
+.frames:nth-child(1)
+{
+    top:-110px;
+    z-index: -1;
+    background-color: coral;
+}
+.frames:nth-child(2){
+    background-color: goldenrod;
+}
+.frames:nth-child(3)
+{
+    top:100px;
+    background-color: burlywood;
 }
